@@ -11,24 +11,25 @@ const commands = {
     "  clear       reset the terminal",
   ],
   about: [
-    "Jitaan Banerjee — Computer Science student at VIT Vellore.",
-    "Technical Head at SAE-VIT, building web, mobile, and embedded products.",
+    "I’m currently a Computer Science and Engineering student at VIT Vellore with a specialization in Data Science. ",
+    "My interests lie at the intersection of AI, NLP, and software development, where I enjoy turning ideas into practical, user-focused solutions.",
+    "Besides academics and building stuff, I serve as the Technical Head of SAE-VIT."
   ],
   projects: [
-    "01  ASTITVA         Self-sovereign identity mobile app",
-    "02  SAE-VIT         Engineering chapter website",
-    "03  CODEBENCH       Real-time Python coding platform",
-    "04  VITALSENSE      Arduino health monitoring system",
+    "01  ASTITVA                  Self-sovereign identity mobile app",
+    "02  SAE-VIT WEBSITE          Official chapter website",
+    "03  CODEBENCH                Real-time Python coding platform",
+    "04  VITALSENSE               Arduino health monitoring system",
   ],
   skills: [
-    "Languages  Java · Python · C/C++ · JavaScript",
-    "Frameworks React · Node.js · Flask · FastAPI",
-    "Tools      MySQL · Supabase · Git · Arduino",
+    "Languages: Java, Python, C/C++, JavaScript",
+    "Frameworks: React, Node.js, Flask, FastAPI",
+    "Tools: MySQL, Supabase, Git, Arduino",
   ],
   contact: [
-    "jitaanbanerjee@gmail.com",
-    "github.com/Jitaan",
-    "linkedin.com/in/jitaan",
+    "email: jitaanbanerjee@gmail.com",
+    "github: https://github.com/Jitaan",
+    "linkedin: https://linkedin.com/in/jitaan",
   ],
 };
 
@@ -87,6 +88,27 @@ function App() {
         </a>
         <div className="nav-links">
           <a href="/resume">Resume</a>
+          <div className="nav-social-links" aria-label="Contact links">
+            <a
+              href="https://github.com/Jitaan"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              GitHub
+            </a>
+            <a href="mailto:jitaanbanerjee@gmail.com">
+              Email
+            </a>
+            <a
+              href="https://linkedin.com/in/jitaan"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              LinkedIn
+            </a>
+          </div>
           <button
             className="theme-toggle"
             type="button"
@@ -99,18 +121,26 @@ function App() {
               viewBox="0 0 24 24"
               aria-hidden="true"
             >
-              <path d="M20.4 15.2A8.6 8.6 0 0 1 8.8 3.6 8.6 8.6 0 1 0 20.4 15.2Z" />
+              {isDark ? (
+                <path d="M20.4 15.2A8.6 8.6 0 0 1 8.8 3.6 8.6 8.6 0 1 0 20.4 15.2Z" />
+              ) : (
+                <path
+                  d="M12 4V2m0 20v-2m5.66-13.66 1.41-1.41m-14.14 14.14 1.41-1.41M20 12h2M2 12h2m13.66 5.66 1.41 1.41M4.93 4.93l1.41 1.41M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              )}
             </svg>
           </button>
-          <a href="mailto:jitaanbanerjee@gmail.com" className="contact-link">
-            Let&apos;s talk ↗
-          </a>
         </div>
       </nav>
       <section className="home-content" id="top">
         <div className="intro-panel">
           <div className="eyebrow">
-            <i /> Available for select collaborations
+            <i /> Available for collaborations
           </div>
           <p className="intro-label">Hello, I&apos;m Jitaan Banerjee.</p>
           <h1>
@@ -119,22 +149,16 @@ function App() {
             <em>into useful things.</em>
           </h1>
           <p className="hero-copy">
-            Computer Science student at VIT Vellore and Technical Head at
-            SAE-VIT, building web, mobile, and embedded products that solve
-            practical problems.
+            Click the button below to know more about me.<br></br> If you're a recruiter, you can find my resume <a href="/resume">here</a>.
+            {/*  */}
           </p>
-          <div className="hero-actions">
-            <a className="button button-primary" href="/resume">
-              View résumé <span>↗</span>
-            </a>
-            <button
-              className="button button-quiet"
-              type="button"
-              onClick={() => execute("about")}
-            >
-              Run <code>about</code>
-            </button>
-          </div>
+          <button
+            className="run-about-button"
+            type="button"
+            onClick={() => execute("about")}
+          >
+            More About Me
+          </button>
         </div>
         <section className="console-section" aria-label="Interactive terminal">
           <div className="terminal-window">
@@ -208,9 +232,9 @@ function App() {
         </section>
       </section>
       <footer>
-        <span>© {new Date().getFullYear()} Jitaan</span>
+        <span> © {new Date().getFullYear()} Jitaan Banerjee</span>
         <span>Built with care, coffee &amp; React.</span>
-        <a href="https://github.com/Jitaan" target="_blank" rel="noreferrer">
+        <a href="https://github.com/Jitaan/portfolio" target="_blank" rel="noreferrer">
           GitHub ↗
         </a>
       </footer>

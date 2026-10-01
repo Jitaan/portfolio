@@ -43,9 +43,12 @@
   color: inherit;
   text-decoration: none;
 }
-.contact-link {
-  padding-bottom: 2px;
-  border-bottom: 1px solid currentColor;
+.nav-links a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+.nav-social-links {
+  display: contents;
 }
 .theme-toggle {
   display: inline-grid;
@@ -119,30 +122,24 @@ h1 em {
   font-size: 16px;
   line-height: 1.55;
 }
-.hero-actions {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-.button {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  min-height: 44px;
-  padding: 0 15px;
+.run-about-button {
+  width: 100%;
+  max-width: 460px;
+  margin-top: 12px;
+  padding: 13px 18px;
   border: 1px solid #20231f;
   border-radius: 3px;
-  color: #20231f;
-  background: transparent;
-  font-size: 13px;
-  text-decoration: none;
-}
-.button-primary {
   color: #f5f4ef;
   background: #20231f;
+  font: 12px "DM Mono", monospace;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
-.button-quiet {
-  border-color: #d0cfc7;
+.run-about-button:hover,
+.run-about-button:focus-visible {
+  outline: none;
+  color: #20231f;
+  background: transparent;
+  transform: translateY(-2px);
 }
 code {
   padding: 3px 5px;
@@ -302,14 +299,15 @@ footer a {
 .dark-theme .eyebrow i {
   box-shadow: 0 0 0 4px #263024;
 }
-.dark-theme .button {
-  border-color: #545c51;
-  color: #e6e8e0;
+.dark-theme .run-about-button {
+  border-color: #e6e8e0;
+  color: #181b18;
+  background: #e6e8e0;
 }
-.dark-theme .button-primary {
-  border-color: #dce7ce;
-  color: #1c201c;
-  background: #dce7ce;
+.dark-theme .run-about-button:hover,
+.dark-theme .run-about-button:focus-visible {
+  color: #e6e8e0;
+  background: transparent;
 }
 .dark-theme code {
   color: #e6e8e0;
@@ -341,13 +339,6 @@ body:has(.dark-theme) {
     grid-template-columns: 1fr;
     gap: 48px;
     padding: 48px 24px;
-  }
-  .hero-actions {
-    align-items: stretch;
-    flex-direction: column;
-  }
-  .button {
-    justify-content: space-between;
   }
   .terminal-body {
     min-height: 270px;

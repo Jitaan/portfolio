@@ -67,6 +67,23 @@ export default function Resume() {
         </a>
         <div className="nav-links">
           <a href="/resume">Resume</a>
+          <div className="nav-social-links" aria-label="Contact links">
+            <a
+              href="https://github.com/Jitaan"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+            <a href="mailto:jitaanbanerjee@gmail.com">Email</a>
+            <a
+              href="https://linkedin.com/in/jitaan"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+          </div>
           <button
             className="theme-toggle"
             type="button"
@@ -86,12 +103,13 @@ export default function Resume() {
               viewBox="0 0 24 24"
               aria-hidden="true"
             >
-              <path d="M20.4 15.2A8.6 8.6 0 0 1 8.8 3.6 8.6 8.6 0 1 0 20.4 15.2Z" />
+              {isDark ? (
+                <path d="M20.4 15.2A8.6 8.6 0 0 1 8.8 3.6 8.6 8.6 0 1 0 20.4 15.2Z" />
+              ) : (
+                <path d="M12 4V2m0 20v-2m5.66-13.66 1.41-1.41m-14.14 14.14 1.41-1.41M20 12h2M2 12h2m13.66 5.66 1.41 1.41M4.93 4.93l1.41 1.41M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />
+              )}
             </svg>
           </button>
-          <a href="mailto:jitaanbanerjee@gmail.com" className="contact-link">
-            Let&apos;s talk <span>↗</span>
-          </a>
         </div>
       </nav>
       <div className="resume-page">
@@ -118,7 +136,7 @@ export default function Resume() {
             href="/Jitaan_Banerjee_Resume.pdf"
             download="Jitaan_Banerjee_Resume.pdf"
           >
-            Download PDF ↓
+            Download ↓
           </a>
         </header>
         <ResumeSection title="Education">
@@ -193,6 +211,13 @@ export default function Resume() {
           </div>
         </ResumeSection>
       </div>
+      <footer>
+        <span>© {new Date().getFullYear()} Jitaan</span>
+        <span>Built with care, coffee &amp; React.</span>
+        <a href="https://github.com/Jitaan" target="_blank" rel="noreferrer">
+          GitHub ↗
+        </a>
+      </footer>
     </main>
   );
 }
