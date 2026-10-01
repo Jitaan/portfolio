@@ -42,6 +42,7 @@ function App() {
     { text: "Welcome to jitaan.xyz — type help to explore.", accent: true },
   ]);
   const [input, setInput] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const inputRef = useRef(null);
   const terminalBodyRef = useRef(null);
 
@@ -87,27 +88,42 @@ function App() {
           <span>J</span> jitaan.xyz
         </a>
         <div className="nav-links">
-          <a href="/resume">Resume</a>
-          <div className="nav-social-links" aria-label="Contact links">
-            <a
-              href="https://github.com/Jitaan"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-            >
-              GitHub
-            </a>
-            <a href="mailto:jitaanbanerjee@gmail.com">
-              Email
-            </a>
-            <a
-              href="https://linkedin.com/in/jitaan"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-            >
-              LinkedIn
-            </a>
+          <button
+            className="menu-toggle"
+            type="button"
+            onClick={() => setIsMenuOpen((current) => !current)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="primary-menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+          <div
+            className={`nav-menu ${isMenuOpen ? "is-open" : ""}`}
+            id="primary-menu"
+          >
+            <a href="/resume">Resume</a>
+            <div className="nav-social-links" aria-label="Contact links">
+              <a
+                href="https://github.com/Jitaan"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
+                GitHub
+              </a>
+              <a href="mailto:jitaanbanerjee@gmail.com">Email</a>
+              <a
+                href="https://linkedin.com/in/jitaan"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
           <button
             className="theme-toggle"

@@ -60,6 +60,7 @@ export default function Resume() {
   const [isDark, setIsDark] = useState(
     () => localStorage.getItem("portfolio-theme-v2") !== "light",
   );
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <main className={`resume-shell ${isDark ? "dark-theme" : ""}`}>
       <nav className="topbar" aria-label="Primary navigation">
@@ -67,23 +68,40 @@ export default function Resume() {
           <span>J</span> jitaan.xyz
         </a>
         <div className="nav-links">
-          <a href="/resume">Resume</a>
-          <div className="nav-social-links" aria-label="Contact links">
-            <a
-              href="https://github.com/Jitaan"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-            <a href="mailto:jitaanbanerjee@gmail.com">Email</a>
-            <a
-              href="https://linkedin.com/in/jitaan"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>
+          <button
+            className="menu-toggle"
+            type="button"
+            onClick={() => setIsMenuOpen((current) => !current)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="primary-menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+          <div
+            className={`nav-menu ${isMenuOpen ? "is-open" : ""}`}
+            id="primary-menu"
+          >
+            <a href="/resume">Resume</a>
+            <div className="nav-social-links" aria-label="Contact links">
+              <a
+                href="https://github.com/Jitaan"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+              <a href="mailto:jitaanbanerjee@gmail.com">Email</a>
+              <a
+                href="https://linkedin.com/in/jitaan"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
           <button
             className="theme-toggle"
@@ -107,7 +125,14 @@ export default function Resume() {
               {isDark ? (
                 <path d="M20.4 15.2A8.6 8.6 0 0 1 8.8 3.6 8.6 8.6 0 1 0 20.4 15.2Z" />
               ) : (
-                <path d="M12 4V2m0 20v-2m5.66-13.66 1.41-1.41m-14.14 14.14 1.41-1.41M20 12h2M2 12h2m13.66 5.66 1.41 1.41M4.93 4.93l1.41 1.41M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" />
+                <path
+                  d="M12 4V2m0 20v-2m5.66-13.66 1.41-1.41m-14.14 14.14 1.41-1.41M20 12h2M2 12h2m13.66 5.66 1.41 1.41M4.93 4.93l1.41 1.41M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               )}
             </svg>
           </button>
@@ -213,7 +238,7 @@ export default function Resume() {
         </ResumeSection>
       </div>
       <footer>
-        <span>© {new Date().getFullYear()} Jitaan</span>
+        <span>© {new Date().getFullYear()} Jitaan Banerjee</span>
         <span>Built with care, coffee &amp; React.</span>
         <a href="https://github.com/Jitaan" target="_blank" rel="noreferrer">
           GitHub ↗
