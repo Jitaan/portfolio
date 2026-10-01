@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 import "./Resume.css";
+import resumePdf from "./assets/Jitaan_Banerjee_Resume.pdf";
 
 const education = [
   {
-    school: "Vellore Institute of Technology",
+    school: "Vellore Institute of Technology, Vellore",
     degree:
       "B.Tech in Computer Science, specialization in Data Science | CGPA: 8.87",
     dates: "Jul 2024 — Jun 2028",
@@ -63,7 +64,7 @@ export default function Resume() {
     <main className={`resume-shell ${isDark ? "dark-theme" : ""}`}>
       <nav className="topbar" aria-label="Primary navigation">
         <a className="wordmark" href="/" aria-label="Jitaan home">
-          <span>J</span> jitaan.dev
+          <span>J</span> jitaan.xyz
         </a>
         <div className="nav-links">
           <a href="/resume">Resume</a>
@@ -117,7 +118,7 @@ export default function Resume() {
           <div className="resume-contact">
             <h1>Jitaan Banerjee</h1>
             <p>
-              Vellore, Tamil Nadu <i />{" "}
+              Kolkata, West Bengal <i />{" "}
               <a href="mailto:jitaanbanerjee@gmail.com">
                 jitaanbanerjee@gmail.com
               </a>{" "}
@@ -133,7 +134,7 @@ export default function Resume() {
           </div>
           <a
             className="resume-download"
-            href="/Jitaan_Banerjee_Resume.pdf"
+            href={resumePdf}
             download="Jitaan_Banerjee_Resume.pdf"
           >
             Download ↓

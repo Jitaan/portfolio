@@ -39,7 +39,7 @@ function App() {
   );
   const [lines, setLines] = useState([
     { text: "Last login: today from the internet", muted: true },
-    { text: "Welcome to jitaan.dev — type help to explore.", accent: true },
+    { text: "Welcome to jitaan.xyz — type help to explore.", accent: true },
   ]);
   const [input, setInput] = useState("");
   const inputRef = useRef(null);
@@ -84,7 +84,7 @@ function App() {
     >
       <nav className="topbar" aria-label="Primary navigation">
         <a className="wordmark" href="/" aria-label="Jitaan home">
-          <span>J</span> jitaan.dev
+          <span>J</span> jitaan.xyz
         </a>
         <div className="nav-links">
           <a href="/resume">Resume</a>

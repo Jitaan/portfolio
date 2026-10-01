@@ -24,8 +24,8 @@
 }
 .wordmark span {
   display: inline-grid;
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   margin-right: 8px;
   place-items: center;
   border-radius: 50%;
